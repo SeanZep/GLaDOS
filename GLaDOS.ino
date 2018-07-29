@@ -1,6 +1,4 @@
 #include <VarSpeedServo.h>
-
-
 #include <Adafruit_NeoPixel.h>
 
 //servos
@@ -15,7 +13,6 @@ VarSpeedServo servo4;
 Adafruit_NeoPixel base = Adafruit_NeoPixel(BLEDs, 7, NEO_GRB + NEO_KHZ800);
 Adafruit_NeoPixel head = Adafruit_NeoPixel(HLEDs, 6, NEO_GRB + NEO_KHZ800);
 
-int buttonState = 0;
 
 void setup() {
   Serial.begin(9600);
@@ -35,16 +32,8 @@ void setup() {
   servo3.attach(10);
   servo4.attach(11);
   
-  //initialize servos
-  //test(servo, 0, 180);
-  //test(servo2, 180, 0);
-  //test(servo3, 45, 90);
-  //test(servo4, 120, 25);
-  
   //initialize LEDs
   base.begin();
-
-  
   head.begin();
   head.setBrightness(50);
   head.setPixelColor(0, 255, 200, 50);
@@ -55,13 +44,7 @@ void setup() {
 }
 
 void loop() {
-  /*buttonState = digitalRead(12);
-  Serial.println(buttonState);
-  while(buttonState != HIGH){
-    Serial.println(buttonState);
-    buttonState  = digitalRead(12);
-  }
-  endingSpeech();*/
+  
 }
 
 void endingSpeech(){
